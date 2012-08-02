@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="span12">
+    <ul class="breadcrumb">
+      <% @product_category.ancestors.each do |pc| %>
+        <li>
+          <%= link_to pc.name, pc %><span class="divider">/</span>
+        </li>
+      <% end %>
+      <li>
+        <%= @product_category.name %><span class="divider">&raquo;</span>
+      </li>
+    </ul>
+    <legend><%= @product_category.name %></legend>
+  </div>
+</div>
+<div class="row">
+  <% @products.each_with_index do |p, index| %>
+    <% if index % 4 == 0 %>
+      <div class="span12">
+        <ul class="thumbnails">
+        <% end %>
+        <li class="span3">
+          <div class="thumbnail">
+            <%= image_tag(p.product_images.first.image(:thumb)) unless p.product_images.empty? %>
+            <div class="caption">
+              <h5><%= p.name %></h5>
+              <p><%= p.description %></p>
+              <p>
+                <%= link_to 'Lihat', p, :class => 'btn btn-primary' %>
+              </p>
+            </div>
+          </div>
+        </li>
+        <% if index % 4 == 3 %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+</div>

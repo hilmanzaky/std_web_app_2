@@ -1,0 +1,53 @@
+<%#*<div class="span6">%>
+<legend>Detail Barang</legend>
+<%
+data = []
+data << ["Nama Barang", product.name]
+data << ["Deskripsi", product.description]
+data << ["Kategori", product.product_category.blank? ? "" : product.product_category.name]
+data << ["Harga Baru", product.price]
+%>
+
+<%= show(data).html_safe %>
+<br/>
+
+<%
+main_path = "http://#{request.host}"
+main_path << ":#{request.port.to_s}" unless request.port.blank?
+
+str = "p[title]=#{product.name}&amp;"
+str << "p[title]=#{product.name}&amp;"
+str << "p[url]=#{main_path}#{request.fullpath}&amp;"
+str << "p[images][0]=#{main_path}#{@product_images.first.image}&amp;" unless @product_images.blank?
+str << "p[summary]=#{product.description}"
+
+%>
+
+
+<a href="https://twitter.com/hilmanzaky" class="twitter-follow-button" data-show-count="false">Follow @hilmanzaky</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<script type="text/javascript">
+  var addthis_share = 
+    { 
+    templates: {
+      twitter: '<%= product.name %> {{url}}'
+    }
+  }
+</script>
+
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+  <a href="http://www.facebook.com/sharer.php?s= 100&amp;<%= str.html_safe %>" target="_blank">
+    <span class=" at300bs at15nc at15t_facebook"><span class="at_a11y">Share on facebook</span></span>
+  </a>
+  <a class="addthis_button_twitter"></a>
+  <a class="addthis_button_email"></a>
+  <a class="addthis_button_print"></a>
+  <a class="addthis_button_compact"></a>
+  <a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-501240545ed408a0"></script>
+<!-- AddThis Button END -->
+
+<br/>

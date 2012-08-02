@@ -1,0 +1,32 @@
+<% if can? :update, @header_link %>
+  <div class="row">
+    <div class="span6">
+      <legend>Detail Link Utama</legend>
+      <%
+      data = []
+      data << ["Nama Header", @header_link.name]
+    %>
+
+      <%= show(data).html_safe %>
+
+      <%= link_to 'Ubah', edit_header_link_path(@header_link), :class => 'btn' %>
+      <%= link_to 'Kembali', header_links_path, :class => 'btn' %>
+    </div>
+  </div>
+<br/>
+<br/>
+<% end %>
+
+<div class="row">
+  <% @infos.each do |i| %>
+    <div class="span12">
+      <legend><%= i.title %></legend>
+
+      <%= i.content.html_safe unless i.content.blank? %>
+      <br/>
+
+      <%= link_to 'Edit', edit_info_path(i), :class => 'btn' %>
+      <%= link_to iconed_text('Hapus', 'icon-trash'), i, :method => :delete, :confirm => 'Apakah anda yakin?', :class => 'btn btn-danger' %>
+    </div>
+  <% end %>
+</div>

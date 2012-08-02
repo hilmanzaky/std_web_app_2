@@ -1,0 +1,9 @@
+<tr>
+  <td><%= ("&nbsp;&nbsp;" * level).html_safe + ("&raquo;&nbsp;".html_safe if level > 0) + product_category.name %></td>
+  <td>
+    <%= link_to 'Lihat', product_category, :class => 'btn btn-mini' %>
+    <%= link_to 'Ubah', edit_product_category_path(product_category), :class => 'btn btn-mini' %>
+    <%= link_to iconed_text('Hapus', 'icon-trash'), product_category, :method => :delete, :confirm => 'Apakah anda yakin?', :class => 'btn btn-mini btn-danger' %>
+    <%= link_to "Add Sub", new_product_category_path(:parent_id => product_category), :class => 'btn btn-mini btn-danger' %>
+  </td>
+</tr>

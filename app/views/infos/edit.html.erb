@@ -1,0 +1,9 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "tinymce-jquery" %>
+<% end %>
+<div class="row">
+  <div class="span12">
+<%= render :partial => 'form', :locals => { :action => "edit" } %>
+    </div>
+</div>
+<%= tinymce %>

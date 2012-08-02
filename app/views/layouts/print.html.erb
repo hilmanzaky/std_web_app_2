@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BlackstarRentApp</title>
+    <%= stylesheet_link_tag "style", "incomplete" %>
+    <%= stylesheet_link_tag "print", :media => 'screen, print' %>
+    <%= javascript_include_tag "jquery" %>
+    <%= javascript_include_tag "print" %>
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <table width="100%">
+      <tr>
+        <td>
+          <div id="print" class="print"><%= link_to("Print", "#") %></div>
+          <%= yield %>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

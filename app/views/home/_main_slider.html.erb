@@ -1,0 +1,32 @@
+<% if version == "bootstrap-carousel" %>
+  <div id="myCarousel" class="carousel slide">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+      <%#*<div class="active item">…</div>%>
+      <%#*<div class="item">…</div>%>
+      <%#*<div class="item">…</div>%>
+      <% @main_sliders.each_with_index do |m, index| %>
+        <div class="<%= "active " if index == 0 %>item"><%= image_tag m.image(:large), :style => "display: block; margin-left: auto; margin-right: auto;" %></div>
+      <% end %>
+    </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        <%= link_to iconed_text('Kelola Gambar', 'icon-wrench', 'black'), main_sliders_path, :class => 'btn' if can? :index, MainSlider %>
+
+  </div>
+<% elsif version == "jqFancyTransitions" %>
+  <% unless @main_sliders.empty? %>
+    <table width="100%">
+      <tr>
+        <td align="center">
+          <div id='slideshowHolder'>
+            <% @main_sliders.each do |m| %>
+              <%= image_tag m.image.url %>
+            <% end %>
+          </div>
+        </td>
+      </tr>
+    </table>
+  <% end %>
+<% end %>

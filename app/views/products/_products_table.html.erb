@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <thead>
+  <th>Nama Produk</th>
+  <th>Deskripsi</th>
+  <th>Harga Beli</th>
+  <th colspan="5"></th>
+</thead>
+<tbody>
+<% @products.each do |product| %>
+  <tr class="<%= cycle('odd', '') %>">
+    <td><%= product.name %></td>
+    <td><%= product.description %></td>
+    <td class="right"><%= money_format(product.price) %></td>
+    <td class="iconed_text">
+      <%= link_to 'Lihat', product, :class => 'btn btn-mini' %>
+      <%= link_to 'Ubah', edit_product_path(product), :rel => 'facebox', :class => 'btn btn-mini' %>
+      <%= link_to iconed_text('Hapus', 'icon-trash'), product, confirm: 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-danger' %>
+    </td>
+  </tr>
+<% end %>
+<tr>
+  <td class="center" colspan="10"><%= paginate @products %></td>
+</tr>
+</tbody>
+</table>

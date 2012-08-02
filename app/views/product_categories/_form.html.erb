@@ -1,0 +1,27 @@
+<%= form_for(@product_category, :html => { :class => 'form-horizontal', :multipart => true }) do |f| %>
+  <fieldset>
+  <legend>Tambah Kategori Barang</legend>
+
+    <%= f.hidden_field :parent_id %>
+
+    <ul class="breadcrumb">
+      <% @product_category.ancestors.each do |pc| %>
+        <li>
+          <%= pc.name %><span class="divider">/</span>
+        </li>
+      <% end %>
+    </ul>
+
+    <div class="control-group">
+      <%= f.label 'Kategori Barang', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'textfield' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit 'Simpan', :class => 'btn btn-primary' %>
+      <%= link_to 'Kembali', product_categories_path, :class => 'btn btn-danger' %>
+    </div>
+  </fieldset>
+<% end %>

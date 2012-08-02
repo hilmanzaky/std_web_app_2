@@ -1,0 +1,24 @@
+<legend>Header</legend>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nama</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @header_links.each do |header_link| %>
+      <tr>
+        <td><%= header_link.name %></td>
+        <td>
+          <%= link_to 'Lihat', header_link, :class => 'btn btn-mini' %>
+          <%= link_to 'Ubah', edit_header_link_path(header_link), :class => 'btn btn-mini' %>
+          <%= link_to iconed_text('Hapus', 'icon-trash'), header_link, confirm: 'Apakah anda yakin?', method: :delete, :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'Tambah', new_header_link_path, :class => 'btn' %>

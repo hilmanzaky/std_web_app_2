@@ -1,0 +1,7 @@
+<%= text_field_tag :name, @product.name, :placeholder => 'nama barang', :class => "input-medium search-query" %>
+
+<%= select_tag :is_package, options_for_select({"Dua-duanya" => "",
+    "Paket" => "true",
+    "Non Paket" => "false"}, :selected => "#{@product.is_package}"), :class => "input-medium search-query" %>
+
+<%= submit_tag 'Cari', :id => 'search_button', :class => 'btn' %>

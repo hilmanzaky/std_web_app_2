@@ -1,0 +1,32 @@
+<%# content_for :head do %>
+  <%#*<meta property="og:title" content="Stuffed Cookies" />%>
+  <%#*<meta property="og:image" content="http://fbwerks.com:8000/zhen/cookie.jpg" />%>
+  <%#*<meta property="og:description" content="The Turducken of Cookies" />%>
+<%# end %>
+
+<div class="row">
+  <div class="span6">
+    <%= render :partial => 'product_images/form' if can? :create, @product_image %>
+    <%= render :partial => 'product_images/list' %>
+  </div>
+  <div class="span6">
+    <%= render :partial => 'show', :locals => { :product => @product, :product_images => @product_images } %>
+    <%= link_to 'Ubah', edit_product_path(@product), :class => 'btn' %>
+    <%= link_to 'Kembali', products_path, :class => 'btn' %>
+  </div>
+</div>
+<%#*<br/>%>
+<%#*<div class="row">%>
+<%#*</div>%>
+<%#= render :partial => 'product_images/list' %>
+
+<%# if @product.is_package? %>
+<%#*<div class="link">%>
+<%#*<!-- product_packages/new.html.erb -->%>
+<%#= link_to 'Tambah Produk Sebagai Paket', new_product_product_package_path(@product), :rel => "facebox", :class => 'btn' %>
+<%#*</div>%>
+
+<%#*<br/>%>
+
+<%#= render :partial => 'product_packages/list', :locals => { :product_packages => @product_packages } %>
+<%# end %>

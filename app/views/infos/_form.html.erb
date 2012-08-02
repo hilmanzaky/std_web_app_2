@@ -1,0 +1,30 @@
+<%= form_for(@info, :html => { :class => 'form-horizontal', :multipart => true }) do |f| %>
+  <fieldset>
+    <legend>Tambah Info</legend>
+
+    <div class="control-group">
+      <%= f.label 'Link Header', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :header_link_id, options_from_collection_for_select(HeaderLink.all, :id, :name), :include_blank => true %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label 'Judul', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :title, :class => 'textfield' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label 'Isi', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :content, :class => "tinymce", :rows => 20, :cols => 120 %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit 'Simpan', :class => 'btn btn-primary' %>
+    </div>
+  </fieldset>
+<% end %>

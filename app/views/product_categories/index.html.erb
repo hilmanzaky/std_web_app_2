@@ -1,0 +1,17 @@
+<legend>Kategori Barang</legend>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Kategori Barang</th>
+      <th>Kelola</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%# @product_categories.each do |pc| %>
+      <%#= render :partial => 'product_category', :locals => { :product_category => pc } %>
+    <%# end %>
+    <%= nested_product_categories_table(@product_categories) %>
+  </tbody>
+</table>
+
+<%= link_to 'Tambah', new_product_category_path, :class => 'btn' %>

@@ -1,0 +1,54 @@
+<%= form_for(@product, :html => { :class => 'form-horizontal', :multipart => true }) do |f| %>
+  <fieldset>
+    <legend>&nbsp;&nbsp;&nbsp;<%= action %> Produk</legend>
+
+  <%#= render :partial => 'layouts/partials/error_messages', :locals => { :obj => @product } %>
+
+    <div class="control-group">
+      <%= f.label 'Kategori', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :product_category_id, 
+                      options_for_select(nested_product_categories_options(@product_categories), @product.product_category_id) %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label 'Nama Barang', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'textfield' %>
+      </div>
+    </div>
+
+    <%#*<div class="control-group">%>
+      <%#= f.label 'Paket Barang', :class => 'control-label' %>
+      <%#*<div class="controls">%>
+        <%#= f.check_box :is_package, :class => 'check-box' %>
+        <%#*&nbsp;<br />%>
+      <%#*</div>%>
+    <%#*</div>%>
+
+    <div class="control-group">
+      <%= f.label 'Deskripsi', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :description, :class => 'input-xlarge', :rows => 5 %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label 'Harga', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :price, :class => 'textfield' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label 'Gambar', :class => 'control-label' %>
+      <div class="controls">
+        <%= file_field_tag :image, :class => 'input-file' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit 'Simpan', :class => 'btn btn-primary' %>
+    </div>
+  </fieldset>
+<% end %>

@@ -1,0 +1,24 @@
+<legend>Info</legend>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Judul</th>
+      <th>Isi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @infos.each do |i| %>
+      <tr>
+        <td><%= i.title %></td>
+        <td><%= i.content.html_safe unless i.content.blank? %></td>
+        <td>
+          <%= link_to 'Lihat', i, :class => 'btn btn-mini' %>
+          <%= link_to 'Ubah', edit_info_path(i), :class => 'btn btn-mini' %>
+          <%= link_to iconed_text('Hapus', 'icon-trash'), i, :method => :delete, :confirm => 'Apakah anda yakin?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Tambah', new_info_path, :class => 'btn' %>

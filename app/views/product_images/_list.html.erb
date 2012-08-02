@@ -1,0 +1,31 @@
+<% unless @product_images.empty? %>
+  <div class="zoomContent">
+    <a href="<%= @product_images.first.image(:large) %>" class="jqzoom" rel='gal1' title="triumph" >
+      <%= image_tag(@product_images.first.image(:medium), :title => "triumph", :style => "border: 1px solid #DDDDDD;border-radius: 4px 4px 4px 4px;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);display: block;line-height: 1;") %>
+    </a>
+  </div>
+  <br/>
+  <div class="span12"><br/></div>
+  
+    <% @product_images.each_with_index do |pi, index| %>
+      <% if index % 3 == 0 %>
+      <ul class="thumbnails" id="thumblist">
+        <% end %>
+      <li class="span2">
+        <div class="thumbnail">
+          <a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<%= pi.image(:medium) %>',largeimage: '<%= pi.image(:large) %>'}">
+            <img src='<%= pi.image(:minithumb) %>'/>
+          </a>
+          <div class="caption">
+            <%= link_to iconed_text('destroy', 'icon-trash'), pi, :method => :delete, :confirm => 'Apakah anda yakin?', :class => 'btn btn-mini btn-danger' %>
+          </div>
+        </div>
+      </li>
+      <% if index % 3 == 2 %>
+        </ul>
+        <% end %>
+
+    <% end %>
+
+
+<% end %>

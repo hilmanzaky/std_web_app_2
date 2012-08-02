@@ -1,0 +1,131 @@
+// Scaffolding
+/*$bodyBackground
+$textColor*/
+
+// Links
+$linkColor: #FFA394;
+$linkColorHover: rgb(255, 163, 148);
+
+// Colors
+/*$blue
+$green
+$red
+$yellow
+$orange
+$pink
+$purple*/
+
+// Sprites
+// $iconSpritePath
+// $iconWhiteSpritePath
+
+// Grid system
+/*$gridColumns
+$gridColumnWidth
+$gridGutterWidth*/
+
+// Fluid grid system
+/*$fluidGridColumnWidth
+$fluidGridGutterWidth*/
+
+// Typography
+/*$sansFontFamily
+$serifFontFamily
+$monoFontFamily
+$baseFontSize
+$baseFontFamily
+$baseLineHeight
+$altFontFamily
+$headingsFontFamily
+$headingsFontWeight
+*/$headingsColor: #F38D9E;/*
+$heroUnitBackground
+$heroUnitHeadingColor
+$heroUnitLeadColor*/
+
+// Tables
+/*$tableBackground
+*/$tableBackgroundAccent: rgb(255, 245, 243);/*
+*/$tableBackgroundHover: darken(#FFF3F5, 10);/*
+$tableBorder*/
+
+// Navbar
+/*$navbarHeight
+*/
+$navbarBackground: #FFD0C9;
+/*
+*/$navbarBackgroundHighlight: lighten(#FFD0C9, 10);/*
+$navbarText
+$navbarBrandColor
+$navbarLinkColor
+*/$navbarLinkColorHover: #5F2406;/*
+$navbarLinkColorActive
+$navbarLinkBackgroundHover
+$navbarLinkBackgroundActive
+$navbarSearchBackground
+$navbarSearchBackgroundFocus
+$navbarSearchBorder
+$navbarSearchPlaceholderColor*/
+
+// Dropdowns
+/*$dropdownBackground
+$dropdownBorder
+$dropdownLinkColor
+$dropdownLinkColorHover
+$dropdownLinkBackgroundHover*/
+
+// Forms
+/*$placeholderText
+$inputBackground
+$inputBorder
+$inputBorderRadius
+$inputDisabledBackground
+$formActionsBackground
+$btnPrimaryBackground
+$btnPrimaryBackgroundHighlight*/
+
+// Form states & alerts
+/*$warningText
+$warningBackground
+$errorText
+$errorBackground
+$successText
+$successBackground
+$infoText
+$infoBackground*/
+
+$iconSpritePath: asset-url('glyphicons-halflings.png', image);
+$iconWhiteSpritePath: asset-url('glyphicons-halflings-white.png', image);
+
+@import "bootstrap";
+body { padding-top: 60px; }
+.input-date { width: 80px }
+@import "bootstrap-responsive";
+
+#myGallery img { max-width: none }
+
+.nested_product_categories {
+    margin-left: 30px;
+}
+
+$inputFocusBorderGlow: #FAAFBE; // default : rgba(82, 168, 236, 0.6)
+$inputFocusBorder: darken($inputFocusBorderGlow, 10%);
+
+input:focus {
+    border-color: $inputFocusBorder;
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $inputFocusBorderGlow;
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $inputFocusBorderGlow;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $inputFocusBorderGlow;
+}
+
+.thumbnail{
+    background: none repeat scroll 0 0 #FFF3F5;
+    }
+
+    legend{
+        color: #5B0613;
+        }

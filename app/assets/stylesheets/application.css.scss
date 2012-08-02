@@ -1,0 +1,91 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require_self
+*/
+
+/*.content {
+background-color: #eee;
+padding: 20px;
+margin: 0 -20px;  negative indent the amount of the padding to maintain the grid system 
+-webkit-border-radius: 0 0 6px 6px;
+-moz-border-radius: 0 0 6px 6px;
+border-radius: 0 0 6px 6px;
+-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+-moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}*/
+
+@import "bootstrap";
+@import "bootstrap_and_overrides.css.scss";
+@import "bootstrap_sub_menu.css.scss";
+@import "home.css.scss";
+@import "jquery.jqzoom.css";
+
+
+.navbar-fixed-top .brand {
+    -moz-transition: all 0.2s linear 0s;
+    color: lighten(#333333, 15);
+    /*    float: right;*/
+    font-weight: bold;
+    margin-right: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 255, 255, 0.125);
+}
+
+/*.navbar-fixed-top .brand:HOVER {*/
+.brand-hover{
+/*    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), 0 0 5px rgba(255, 255, 255, 0.3), 0 0 11px rgba(255, 255, 255, 1);*/
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), 0 0 5px rgba(255, 255, 255, 0.3), 0 0 11px darken(rgb(255, 163, 148), 20);/*
+    font-size:30px;*/
+/*    color:#c61a1a;*/
+}
+
+
+/*.subnav ul.dropdown-menu li:HOVER ul.dropdown-menu {
+display:block;
+position:absolute;
+left:100%;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+
+.subnav ul.dropdown-menu li ul.dropdown-menu {
+display: none;
+float:right;
+position: relative;
+top: auto;
+margin-top: -30px;
+}
+
+.subnav li.dropdown ul.dropdown-menu .dropdown-menu::before {
+content: '';
+display: inline-block;
+border-top: 7px solid transparent;
+border-bottom: 7px solid transparent;
+border-right:7px solid #CCC;
+border-right-color: rgba(0, 0, 0, 0.2);
+position: absolute;
+top: 9px;
+left: -14px;
+}
+
+.subnav li.dropdown ul.dropdown-menu .dropdown-menu::after {
+content: '';
+display: inline-block;
+border-top: 6px solid transparent;
+border-bottom: 6px solid transparent;
+border-right:6px solid white;
+position: absolute;
+top: 10px;
+left: -12px;
+}*/
